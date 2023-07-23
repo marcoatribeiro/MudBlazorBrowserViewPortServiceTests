@@ -15,10 +15,10 @@ internal static class TestContextExtensions
         ctx.Services
 #pragma warning disable CS0618
             // If the 2 lines below are commented (and the one below them is not) the test does not work.
-            .AddScoped<IBrowserWindowSizeProvider, BrowserWindowSizeProvider>()
-            .AddScoped<IBreakpointService, BreakpointService>()
+            //.AddScoped<IBrowserWindowSizeProvider, BrowserWindowSizeProvider>()
+            //.AddScoped<IBreakpointService, BreakpointService>()
 #pragma warning restore CS0618
-            //.AddMudBlazorResizeListener() // If this line is commented (and the 2 above are not) the test works.
+            .AddMudBlazorResizeListener() // If this line is commented (and the 2 above are not) the test works.
             .AddMudBlazorResizeObserver()
             .AddMudBlazorResizeObserverFactory()
             .AddMudBlazorKeyInterceptor()

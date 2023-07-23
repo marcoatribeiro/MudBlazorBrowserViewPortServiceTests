@@ -1,9 +1,13 @@
-﻿@inherits TestContext
+﻿@using MudBlazor.Services
+@using Moq
+@inherits TestContext
 
 @code {
+    private readonly FallbackServiceProvider _serviceProvider = new();
+
     public NotificationsDrawerTests()
     {
-        this.AddTestServicesAndFallbackServiceProvider();
+        this.AddTestServicesAndFallbackServiceProvider(_serviceProvider);
     }
 
     [Fact]
@@ -11,6 +15,18 @@
     {
         var closed = false;
         void OpenChangedHandler(bool args) => closed = !args;
+
+        // Why does this work...
+        JSInterop.Setup<BrowserWindowSize>("mudResizeListener.getBrowserWindowSize").SetResult(new BrowserWindowSize { Width = 960, Height = 720 });
+
+        // ... but this does not?
+        //_serviceProvider.BrowserViewportServiceMock.Setup(m => m.GetCurrentBrowserWindowSizeAsync())
+        //    .ReturnsAsync(new BrowserWindowSize { Width = 960, Height = 720 });
+
+        // The below used to work, when mocking IResizeService
+        //_serviceProvider.ResizeServiceMock.Setup(m => m.GetBrowserWindowSize())
+        //    .ReturnsAsync(new BrowserWindowSize { Width = 960, Height = 720 });
+
 
         var cut = Render(@<NotificationsDrawer Open="@(!closed)" OpenChanged="@OpenChangedHandler" />);
 
