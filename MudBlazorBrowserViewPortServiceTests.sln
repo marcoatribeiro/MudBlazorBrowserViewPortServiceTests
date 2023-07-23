@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MudBlazorBrowserViewPortServiceTests.Server", "MudBlazorBrowserViewPortServiceTests\Server\MudBlazorBrowserViewPortServiceTests.Server.csproj", "{C44BB532-28E2-4541-B129-538D1D52CE5C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MudBlazorBrowserViewPortServiceTests.Client", "MudBlazorBrowserViewPortServiceTests\Client\MudBlazorBrowserViewPortServiceTests.Client.csproj", "{194EB29C-25CE-439C-947A-810B483BCB62}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MudBlazorBrowserViewPortServiceTests.Shared", "MudBlazorBrowserViewPortServiceTests\Shared\MudBlazorBrowserViewPortServiceTests.Shared.csproj", "{8C1F6339-A36F-409F-8B2E-189B3B3927D0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MudBlazorBrowserViewPortServiceTests.Tests", "MudBlazorBrowserViewPortServiceTests.Tests\MudBlazorBrowserViewPortServiceTests.Tests.csproj", "{E3869EA6-3F78-4C32-927F-869481627BD0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C44BB532-28E2-4541-B129-538D1D52CE5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C44BB532-28E2-4541-B129-538D1D52CE5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C44BB532-28E2-4541-B129-538D1D52CE5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C44BB532-28E2-4541-B129-538D1D52CE5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{194EB29C-25CE-439C-947A-810B483BCB62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{194EB29C-25CE-439C-947A-810B483BCB62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{194EB29C-25CE-439C-947A-810B483BCB62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{194EB29C-25CE-439C-947A-810B483BCB62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C1F6339-A36F-409F-8B2E-189B3B3927D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C1F6339-A36F-409F-8B2E-189B3B3927D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C1F6339-A36F-409F-8B2E-189B3B3927D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C1F6339-A36F-409F-8B2E-189B3B3927D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3869EA6-3F78-4C32-927F-869481627BD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3869EA6-3F78-4C32-927F-869481627BD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3869EA6-3F78-4C32-927F-869481627BD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3869EA6-3F78-4C32-927F-869481627BD0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DD95CD34-13F7-46BB-A4C7-A200777B7BD7}
+	EndGlobalSection
+EndGlobal

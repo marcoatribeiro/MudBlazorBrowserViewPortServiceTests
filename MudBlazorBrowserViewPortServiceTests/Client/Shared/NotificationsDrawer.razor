@@ -1,0 +1,34 @@
+﻿<MudDrawer @bind-Open="Open" Anchor="Anchor.Right" Elevation="1" Variant="@DrawerVariant.Temporary" Width="300px">
+    <MudDrawerHeader Class="align-center">
+        <MudIcon Icon="far fa-bell" Class="mr-3" />
+        <MudText Typo="Typo.body1">Notificações do sistema</MudText>
+        <MudSpacer />
+        <MudIconButton Color="Color.Default" Icon="@Icons.Material.Filled.KeyboardDoubleArrowRight"
+                       OnClick="@CloseDrawerAsync" Size="Size.Small" />
+    </MudDrawerHeader>
+    <div class="header-divider">
+        <MudDivider />
+    </div>
+    <div class="ma-6">
+        <ErrorBoundary @ref="_errorBoundary">
+            <ChildContent>
+                <MudList Clickable="true">
+                    <MudListItem Text="Inbox" Icon="@Icons.Material.Filled.Inbox" />
+                    <MudListItem Text="Sent" Icon="@Icons.Material.Filled.Send" />
+                    <MudDivider />
+                    <MudListItem Text="Trash" />
+                    <MudListItem Text="Spam" />
+                </MudList>
+            </ChildContent>
+            <ErrorContent Context="_">
+                <div class="error-content">
+                    <MudAlert Severity="Severity.Error" Variant="Variant.Filled" Class="mb-1">Error</MudAlert>
+                    <MudButton Variant="Variant.Outlined" Color="Color.Primary" StartIcon="fa fa-arrow-rotate-left"
+                               FullWidth="true" Class="mb-2" OnClick="ReloadNotificationsList">Try again</MudButton>
+                </div>
+            </ErrorContent>
+        </ErrorBoundary>
+    </div>
+</MudDrawer>
+
+<MudOverlay DarkBackground="false" Visible="Open" VisibleChanged="OpenChanged" Class="drawer-overlay" OnClick="@CloseDrawerAsync" />

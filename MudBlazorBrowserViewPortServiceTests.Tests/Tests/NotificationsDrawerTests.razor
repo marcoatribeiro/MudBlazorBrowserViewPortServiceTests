@@ -1,0 +1,29 @@
+﻿@inherits TestContext
+
+@code {
+    public NotificationsDrawerTests()
+    {
+        this.AddTestServicesAndFallbackServiceProvider();
+    }
+
+    [Fact]
+    public void ShouldRenderAndClose()
+    {
+        var closed = false;
+        void OpenChangedHandler(bool args) => closed = !args;
+
+        var cut = Render(@<NotificationsDrawer Open="@(!closed)" OpenChanged="@OpenChangedHandler" />);
+
+        cut.HasComponent<MudOverlay>().Should().BeTrue();
+        cut.FindComponents<MudOverlay>().Should().HaveCount(2);
+        var mudOverlay = cut.FindComponents<MudOverlay>().Last().Instance;
+        mudOverlay.Class.Should().Contain("drawer-overlay");
+
+        closed.Should().BeFalse();
+
+        var closeButton = cut.Find("div.mud-drawer-header > button.mud-icon-button");
+        closeButton.Click();
+
+        closed.Should().BeTrue();
+    }
+}
